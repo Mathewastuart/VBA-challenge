@@ -9,9 +9,10 @@ The Sub-script presented here cycles through all three sheets to get the require
 The First secrion of code creates variable that will be used for the first data collection phase
 
 first_value = stores the First day Open value of a market (EX: AAB)
+
 last_value = stores the Closing value of the specific market (Ex:AAB)
 
-first_found is a boolean so only the first value isn't overwritten in the loop
+first_found is a boolean created to ensure the first_value isn't overwritten in the loop (further explanation below)
 
 
 yearly_change will be used to store the change in value from last_value to first_value
