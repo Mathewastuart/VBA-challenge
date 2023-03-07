@@ -16,8 +16,10 @@ yearly_change will be used to store the change in value from last_value to first
 
 stock_volume will store the total volume for each market (EX: AAB)
 
-yearly chang
-count is a varialbe used to help place the calculated values in the appropriate cells
+
+count is a varialbe used to help place the found values in the appropriate cells
+
+Values are saved as either Integer, double, or LongLong depending on the varaible (Ex: stock_volume is saved as LongLong due to its size)
 
 The entire subscript is in a For Loop that cyles through each Sheet once it has been filed out with the required data
 
@@ -33,6 +35,16 @@ The first embedded For loop has two main Functions:
   
  these actions will be repeated until the information for all Tickers has been completed 
  
+ 
+ It's Structure is as Follows:
+  1. First If statemnt: tests if first value has been found AND if the current and following cell have the same ticker
+      If this is true then it will calulate last_value, yearly_change and assign yearly_change to a cell on the worksheet
+  2. ElseIf statement checks if the first value HAS NOT been found and if the current and following cells match
+       If this is true it will assign a value to first_value 
+  3. New If statment block, first If checks if the current and following rows have the same Ticker value
+        If this is true it adds the stock_volume value to the running total
+  4. Else statement 
+      if the code defaults here it resets first_value, last_value, and stock volume to 0, sets first_found to false, and adds 1 to count. it also assigns the values found for this Ticker to cells on the worksheet. This allows us to save the data for this set of Tickers (EX: AAB) and move on fresh to the new ticker found (EX: AAF)
 
 
 The second For loop 
@@ -47,8 +59,15 @@ THird For loop
 This loop cylces through the data collected in the first for loop and calculates greatest and least % change as well as greatest Volume
 Following this loop the value are placed in their respective cells and labeled
 
+The if statements will test if the number is greater or less than the previosly stored value (depeding on what we are trying to accomplish)
+it will then hold the value unless a smaller or larger value has been found in the data (greater if we are searching for greatest % change, lower if we are loking for lowest% change)
+
+A simmilar process is applied for greatest_volume
+
+The corresponding Ticker value will be pulled as well
+
 
 Finally
 ---------
 
-The subscript moves to the next sheeg and repeats the process
+The subscript moves to the next sheet and repeats the process
