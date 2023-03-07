@@ -1,5 +1,7 @@
 # VBA-challenge
 
+~All Column naming and formatting done in VBA, can be found in code if not directly referenced here
+
 Begining of Subscript
 ------------------------
 The Sub-script presented here cycles through all three sheets to get the required data
