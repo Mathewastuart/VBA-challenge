@@ -41,7 +41,8 @@ The first embedded For loop has two main Functions:
  
  It's Structure is as Follows:
   1. First If statemnt: tests if first value has been found AND if the current and following cell have the same ticker
-      If this is true then it will calulate last_value, yearly_change and assign yearly_change to a cell on the worksheet
+      If this is true then it will store last_value, calclulate yearly_change and assign yearly_change to a cell on the worksheet
+      it also calcualtes % change and assigns it to a cell
   2. ElseIf statement checks if the first value HAS NOT been found and if the current and following cells match
        If this is true it will assign a value to first_value 
   3. New If statment block, first If checks if the current and following rows have the same Ticker value
